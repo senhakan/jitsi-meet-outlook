@@ -62,7 +62,7 @@ namespace JitsiMeetOutlook
 
         private bool isTxtOlderThanInstallation()
         {
-            string mainDllPath = Path.Combine(Properties.Settings.Default.installDirectory, "Jitsi Meet Outlook Add-In.dll.config");
+            string mainDllPath = Path.Combine(Properties.Settings.Default.installDirectory, "AkgunMeetOutlookAddIn.dll.config");
 
             FileInfo infoMainDll = new FileInfo(mainDllPath);
             FileInfo infoFirstRunTxt = new FileInfo(firstRunMarkerFilePath());

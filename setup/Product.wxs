@@ -2,7 +2,7 @@
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
     <!-- Set project variables -->
     <?define JitsiMeetOutlook_TargetDir=$(var.JitsiMeetOutlook.TargetDir)?>
-    <?define JitsiMeetOutlook_ProjectName="JitsiMeetOutlookAddIn"?>
+    <?define JitsiMeetOutlook_ProjectName="AkgunMeetOutlookAddIn"?>
 
     <!-- Addon details -->
     <Product Id="*" Name="AkgunMeetOutlookAddIn" Language="1036" Version="0.8.0" Manufacturer="github.com/timetheoretical" UpgradeCode="146f17e9-8106-4dd3-a3c5-b8f2c92ffb25">
@@ -103,54 +103,54 @@
                 <RegistryValue Root="HKCU" Key="Software\[Manufacturer]\[ProductName]\Components" Name="Diacritics.dll" Type="integer" Value="1" KeyPath="yes" />
             </Component>
             <Component Id="Jitsi_Meet_Outlook_AddIn.dll" Guid="{B4C2F6E3-8D1A-4C2B-9F7E-1A3B5D7C8E92}">
-                <File Id="Jitsi_Meet_Outlook_AddIn.dll" Name="JitsiMeetOutlookAddIn.dll" Source="$(var.JitsiMeetOutlook.ProjectDir)bin\Release\JitsiMeetOutlookAddIn.dll" />
+                <File Id="Jitsi_Meet_Outlook_AddIn.dll" Name="AkgunMeetOutlookAddIn.dll" Source="$(var.JitsiMeetOutlook.ProjectDir)bin\Release\AkgunMeetOutlookAddIn.dll" />
                 <RegistryValue Root="HKCU" Key="Software\[Manufacturer]\[ProductName]\Components" Name="Jitsi_Meet_Outlook_AddIn.dll" Type="integer" Value="1" KeyPath="yes" />
             </Component>
             <Component Id="Jitsi_Meet_Outlook_AddIn.dll.manifest" Guid="{2E6B9F1C-3D4A-4B8E-9A1C-6D5E4B3A2C19}">
-                <File Id="Jitsi_Meet_Outlook_AddIn.dll.manifest" Name="JitsiMeetOutlookAddIn.dll.manifest" Source="$(var.JitsiMeetOutlook.ProjectDir)bin\Release\JitsiMeetOutlookAddIn.dll.manifest" />
+                <File Id="Jitsi_Meet_Outlook_AddIn.dll.manifest" Name="AkgunMeetOutlookAddIn.dll.manifest" Source="$(var.JitsiMeetOutlook.ProjectDir)bin\Release\AkgunMeetOutlookAddIn.dll.manifest" />
                 <RegistryValue Root="HKCU" Key="Software\[Manufacturer]\[ProductName]\Components" Name="Jitsi_Meet_Outlook_AddIn.dll.manifest" Type="integer" Value="1" KeyPath="yes" />
             </Component>
             <Component Id="Jitsi_Meet_Outlook_AddIn.vsto" Guid="{A7B1C3D4-E5F6-4789-A1B2-C3D4E5F6A789}">
-                <File Id="Jitsi_Meet_Outlook_AddIn.vsto" Name="JitsiMeetOutlookAddIn.vsto" Source="$(var.JitsiMeetOutlook.ProjectDir)bin\Release\JitsiMeetOutlookAddIn.vsto" />
+                <File Id="Jitsi_Meet_Outlook_AddIn.vsto" Name="AkgunMeetOutlookAddIn.vsto" Source="$(var.JitsiMeetOutlook.ProjectDir)bin\Release\AkgunMeetOutlookAddIn.vsto" />
                 <RegistryValue Root="HKCU" Key="Software\[Manufacturer]\[ProductName]\Components" Name="Jitsi_Meet_Outlook_AddIn.vsto" Type="integer" Value="1" KeyPath="yes" />
             </Component>
             <Component Id="Jitsi_Meet_Outlook_AddIn.dll.config" Guid="{6A5B4C3D-2E1F-4A8B-9C7D-8E6F5A4B3C2D}">
-                <File Id="Jitsi_Meet_Outlook_AddIn.dll.config" Name="JitsiMeetOutlookAddIn.dll.config" Source="$(var.JitsiMeetOutlook.ProjectDir)bin\Release\JitsiMeetOutlookAddIn.dll.config" />
+                <File Id="Jitsi_Meet_Outlook_AddIn.dll.config" Name="AkgunMeetOutlookAddIn.dll.config" Source="$(var.JitsiMeetOutlook.ProjectDir)bin\Release\AkgunMeetOutlookAddIn.dll.config" />
                 <RegistryValue Root="HKCU" Key="Software\[Manufacturer]\[ProductName]\Components" Name="Jitsi_Meet_Outlook_AddIn.dll.config" Type="integer" Value="1" KeyPath="yes" />
 
                 <!-- ensure each key exists with the right value -->
-                <util:XmlConfig Id="Cfg_Domain_Delete" File="[INSTALLFOLDER]JitsiMeetOutlookAddIn.dll.config" Action="delete" ElementPath="/configuration/appSettings/add[\[]@key='Domain'[\]]" Sequence="10"/>
-                <util:XmlConfig Id="Cfg_Domain_Create" File="[INSTALLFOLDER]JitsiMeetOutlookAddIn.dll.config" Action="create" ElementPath="/configuration/appSettings" Name="add" Value="key=Domain; value=[DOMAIN]" Sequence="11"/>
+                <util:XmlConfig Id="Cfg_Domain_Delete" File="[INSTALLFOLDER]AkgunMeetOutlookAddIn.dll.config" Action="delete" ElementPath="/configuration/appSettings/add[\[]@key='Domain'[\]]" Sequence="10"/>
+                <util:XmlConfig Id="Cfg_Domain_Create" File="[INSTALLFOLDER]AkgunMeetOutlookAddIn.dll.config" Action="create" ElementPath="/configuration/appSettings" Name="add" Value="key=Domain; value=[DOMAIN]" Sequence="11"/>
 
-                <util:XmlConfig Id="Cfg_RoomId_Delete" File="[INSTALLFOLDER]JitsiMeetOutlookAddIn.dll.config" Action="delete" ElementPath="/configuration/appSettings/add[\[]@key='roomID'[\]]" Sequence="20"/>
-                <util:XmlConfig Id="Cfg_RoomId_Create" File="[INSTALLFOLDER]JitsiMeetOutlookAddIn.dll.config" Action="create" ElementPath="/configuration/appSettings" Name="add" Value="key=roomID; value=[ROOMID]" Sequence="21"/>
+                <util:XmlConfig Id="Cfg_RoomId_Delete" File="[INSTALLFOLDER]AkgunMeetOutlookAddIn.dll.config" Action="delete" ElementPath="/configuration/appSettings/add[\[]@key='roomID'[\]]" Sequence="20"/>
+                <util:XmlConfig Id="Cfg_RoomId_Create" File="[INSTALLFOLDER]AkgunMeetOutlookAddIn.dll.config" Action="create" ElementPath="/configuration/appSettings" Name="add" Value="key=roomID; value=[ROOMID]" Sequence="21"/>
 
-                <util:XmlConfig Id="Cfg_RequireDisplayName_Delete" File="[INSTALLFOLDER]JitsiMeetOutlookAddIn.dll.config" Action="delete" ElementPath="/configuration/appSettings/add[\[]@key='requireDisplayName'[\]]" Sequence="30"/>
-                <util:XmlConfig Id="Cfg_RequireDisplayName_Create" File="[INSTALLFOLDER]JitsiMeetOutlookAddIn.dll.config" Action="create" ElementPath="/configuration/appSettings" Name="add" Value="key=requireDisplayName; value=[REQNAME]" Sequence="31"/>
+                <util:XmlConfig Id="Cfg_RequireDisplayName_Delete" File="[INSTALLFOLDER]AkgunMeetOutlookAddIn.dll.config" Action="delete" ElementPath="/configuration/appSettings/add[\[]@key='requireDisplayName'[\]]" Sequence="30"/>
+                <util:XmlConfig Id="Cfg_RequireDisplayName_Create" File="[INSTALLFOLDER]AkgunMeetOutlookAddIn.dll.config" Action="create" ElementPath="/configuration/appSettings" Name="add" Value="key=requireDisplayName; value=[REQNAME]" Sequence="31"/>
 
-                <util:XmlConfig Id="Cfg_StartWithAudioMuted_Delete" File="[INSTALLFOLDER]JitsiMeetOutlookAddIn.dll.config" Action="delete" ElementPath="/configuration/appSettings/add[\[]@key='startWithAudioMuted'[\]]" Sequence="40"/>
-                <util:XmlConfig Id="Cfg_StartWithAudioMuted_Create" File="[INSTALLFOLDER]JitsiMeetOutlookAddIn.dll.config" Action="create" ElementPath="/configuration/appSettings" Name="add" Value="key=startWithAudioMuted; value=[NOAUDIO]" Sequence="41"/>
+                <util:XmlConfig Id="Cfg_StartWithAudioMuted_Delete" File="[INSTALLFOLDER]AkgunMeetOutlookAddIn.dll.config" Action="delete" ElementPath="/configuration/appSettings/add[\[]@key='startWithAudioMuted'[\]]" Sequence="40"/>
+                <util:XmlConfig Id="Cfg_StartWithAudioMuted_Create" File="[INSTALLFOLDER]AkgunMeetOutlookAddIn.dll.config" Action="create" ElementPath="/configuration/appSettings" Name="add" Value="key=startWithAudioMuted; value=[NOAUDIO]" Sequence="41"/>
 
-                <util:XmlConfig Id="Cfg_StartWithVideoMuted_Delete" File="[INSTALLFOLDER]JitsiMeetOutlookAddIn.dll.config" Action="delete" ElementPath="/configuration/appSettings/add[\[]@key='startWithVideoMuted'[\]]" Sequence="50"/>
-                <util:XmlConfig Id="Cfg_StartWithVideoMuted_Create" File="[INSTALLFOLDER]JitsiMeetOutlookAddIn.dll.config" Action="create" ElementPath="/configuration/appSettings" Name="add" Value="key=startWithVideoMuted; value=[NOVIDEO]" Sequence="51"/>
+                <util:XmlConfig Id="Cfg_StartWithVideoMuted_Delete" File="[INSTALLFOLDER]AkgunMeetOutlookAddIn.dll.config" Action="delete" ElementPath="/configuration/appSettings/add[\[]@key='startWithVideoMuted'[\]]" Sequence="50"/>
+                <util:XmlConfig Id="Cfg_StartWithVideoMuted_Create" File="[INSTALLFOLDER]AkgunMeetOutlookAddIn.dll.config" Action="create" ElementPath="/configuration/appSettings" Name="add" Value="key=startWithVideoMuted; value=[NOVIDEO]" Sequence="51"/>
 
-                <util:XmlConfig Id="Cfg_Language_Delete" File="[INSTALLFOLDER]JitsiMeetOutlookAddIn.dll.config" Action="delete" ElementPath="/configuration/appSettings/add[\[]@key='language'[\]]" Sequence="60"/>
-                <util:XmlConfig Id="Cfg_Language_Create" File="[INSTALLFOLDER]JitsiMeetOutlookAddIn.dll.config" Action="create" ElementPath="/configuration/appSettings" Name="add" Value="key=language; value=[LANG]" Sequence="61"/>
+                <util:XmlConfig Id="Cfg_Language_Delete" File="[INSTALLFOLDER]AkgunMeetOutlookAddIn.dll.config" Action="delete" ElementPath="/configuration/appSettings/add[\[]@key='language'[\]]" Sequence="60"/>
+                <util:XmlConfig Id="Cfg_Language_Create" File="[INSTALLFOLDER]AkgunMeetOutlookAddIn.dll.config" Action="create" ElementPath="/configuration/appSettings" Name="add" Value="key=language; value=[LANG]" Sequence="61"/>
 
-                <util:XmlConfig Id="Cfg_Mode_Delete" File="[INSTALLFOLDER]JitsiMeetOutlookAddIn.dll.config" Action="delete" ElementPath="/configuration/appSettings/add[\[]@key='randomRoomIdGeneratorMode'[\]]" Sequence="70"/>
-                <util:XmlConfig Id="Cfg_Mode_Create" File="[INSTALLFOLDER]JitsiMeetOutlookAddIn.dll.config" Action="create" ElementPath="/configuration/appSettings" Name="add" Value="key=randomRoomIdGeneratorMode; value=[MODE]" Sequence="71"/>
+                <util:XmlConfig Id="Cfg_Mode_Delete" File="[INSTALLFOLDER]AkgunMeetOutlookAddIn.dll.config" Action="delete" ElementPath="/configuration/appSettings/add[\[]@key='randomRoomIdGeneratorMode'[\]]" Sequence="70"/>
+                <util:XmlConfig Id="Cfg_Mode_Create" File="[INSTALLFOLDER]AkgunMeetOutlookAddIn.dll.config" Action="create" ElementPath="/configuration/appSettings" Name="add" Value="key=randomRoomIdGeneratorMode; value=[MODE]" Sequence="71"/>
 
-                <util:XmlConfig Id="Cfg_ConferenceMapper_Delete" File="[INSTALLFOLDER]JitsiMeetOutlookAddIn.dll.config" Action="delete" ElementPath="/configuration/appSettings/add[\[]@key='conferenceMapperEndpoint'[\]]" Sequence="80"/>
-                <util:XmlConfig Id="Cfg_ConferenceMapper_Create" File="[INSTALLFOLDER]JitsiMeetOutlookAddIn.dll.config" Action="create" ElementPath="/configuration/appSettings" Name="add" Value="key=conferenceMapperEndpoint; value=[CONFERENCEMAPPER_ENDPOINT]" Sequence="81"/>
+                <util:XmlConfig Id="Cfg_ConferenceMapper_Delete" File="[INSTALLFOLDER]AkgunMeetOutlookAddIn.dll.config" Action="delete" ElementPath="/configuration/appSettings/add[\[]@key='conferenceMapperEndpoint'[\]]" Sequence="80"/>
+                <util:XmlConfig Id="Cfg_ConferenceMapper_Create" File="[INSTALLFOLDER]AkgunMeetOutlookAddIn.dll.config" Action="create" ElementPath="/configuration/appSettings" Name="add" Value="key=conferenceMapperEndpoint; value=[CONFERENCEMAPPER_ENDPOINT]" Sequence="81"/>
 
-                <util:XmlConfig Id="Cfg_PhoneNumberList_Delete" File="[INSTALLFOLDER]JitsiMeetOutlookAddIn.dll.config" Action="delete" ElementPath="/configuration/appSettings/add[\[]@key='phoneNumberListEndpoint'[\]]" Sequence="90"/>
-                <util:XmlConfig Id="Cfg_PhoneNumberList_Create" File="[INSTALLFOLDER]JitsiMeetOutlookAddIn.dll.config" Action="create" ElementPath="/configuration/appSettings" Name="add" Value="key=phoneNumberListEndpoint; value=[PHONENUMBERLIST_ENDPOINT]" Sequence="91"/>
+                <util:XmlConfig Id="Cfg_PhoneNumberList_Delete" File="[INSTALLFOLDER]AkgunMeetOutlookAddIn.dll.config" Action="delete" ElementPath="/configuration/appSettings/add[\[]@key='phoneNumberListEndpoint'[\]]" Sequence="90"/>
+                <util:XmlConfig Id="Cfg_PhoneNumberList_Create" File="[INSTALLFOLDER]AkgunMeetOutlookAddIn.dll.config" Action="create" ElementPath="/configuration/appSettings" Name="add" Value="key=phoneNumberListEndpoint; value=[PHONENUMBERLIST_ENDPOINT]" Sequence="91"/>
 
-                <util:XmlConfig Id="Cfg_ConferenceScheduler_Delete" File="[INSTALLFOLDER]JitsiMeetOutlookAddIn.dll.config" Action="delete" ElementPath="/configuration/appSettings/add[\[]@key='conferenceSchedulerEndpoint'[\]]" Sequence="100"/>
-                <util:XmlConfig Id="Cfg_ConferenceScheduler_Create" File="[INSTALLFOLDER]JitsiMeetOutlookAddIn.dll.config" Action="create" ElementPath="/configuration/appSettings" Name="add" Value="key=conferenceSchedulerEndpoint; value=[CONFERENCESCHEDULER_ENDPOINT]" Sequence="101"/>
+                <util:XmlConfig Id="Cfg_ConferenceScheduler_Delete" File="[INSTALLFOLDER]AkgunMeetOutlookAddIn.dll.config" Action="delete" ElementPath="/configuration/appSettings/add[\[]@key='conferenceSchedulerEndpoint'[\]]" Sequence="100"/>
+                <util:XmlConfig Id="Cfg_ConferenceScheduler_Create" File="[INSTALLFOLDER]AkgunMeetOutlookAddIn.dll.config" Action="create" ElementPath="/configuration/appSettings" Name="add" Value="key=conferenceSchedulerEndpoint; value=[CONFERENCESCHEDULER_ENDPOINT]" Sequence="101"/>
 
-                <util:XmlConfig Id="Cfg_ConferenceSchedulerSecret_Delete" File="[INSTALLFOLDER]JitsiMeetOutlookAddIn.dll.config" Action="delete" ElementPath="/configuration/appSettings/add[\[]@key='conferenceSchedulerEndpointSecret'[\]]" Sequence="110"/>
-                <util:XmlConfig Id="Cfg_ConferenceSchedulerSecret_Create" File="[INSTALLFOLDER]JitsiMeetOutlookAddIn.dll.config" Action="create" ElementPath="/configuration/appSettings" Name="add" Value="key=conferenceSchedulerEndpointSecret; value=[CONFERENCESCHEDULER_ENDPOINT_SECRET]" Sequence="111"/>
+                <util:XmlConfig Id="Cfg_ConferenceSchedulerSecret_Delete" File="[INSTALLFOLDER]AkgunMeetOutlookAddIn.dll.config" Action="delete" ElementPath="/configuration/appSettings/add[\[]@key='conferenceSchedulerEndpointSecret'[\]]" Sequence="110"/>
+                <util:XmlConfig Id="Cfg_ConferenceSchedulerSecret_Create" File="[INSTALLFOLDER]AkgunMeetOutlookAddIn.dll.config" Action="create" ElementPath="/configuration/appSettings" Name="add" Value="key=conferenceSchedulerEndpointSecret; value=[CONFERENCESCHEDULER_ENDPOINT_SECRET]" Sequence="111"/>
             </Component>
         </ComponentGroup>
         <ComponentGroup Id="Dependencies" Directory="INSTALLFOLDER">

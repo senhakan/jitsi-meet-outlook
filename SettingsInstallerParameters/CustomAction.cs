@@ -29,7 +29,7 @@ namespace SettingsInstallerParameters
         private static void updateConfigXml(Session session)
         {
             // Write install path to config file
-            string xmlPath = Path.Combine(getInstallDir(session), "JitsiMeetOutlookAddIn.dll.config");
+            string xmlPath = Path.Combine(getInstallDir(session), "AkgunMeetOutlookAddIn.dll.config");
 
             session.Log($"Executing on file: {xmlPath}");
             if (!File.Exists(xmlPath))
