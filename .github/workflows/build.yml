@@ -24,7 +24,7 @@ jobs:
         run: choco install wixtoolset -y
 
       - name: Build solution
-        run: msbuild JitsiMeetOutlook.sln /p:Configuration=Release /p:SignManifests=false
+        run: msbuild JitsiMeetOutlook.sln /p:Configuration=Release
 
       - name: Upload MSI
         uses: actions/upload-artifact@v4
