@@ -28,7 +28,7 @@ namespace JitsiMeetOutlook
             Outlook.Inspector inspector = (Outlook.Inspector)this.Context;
             appointmentItem = inspector.CurrentItem as Outlook.AppointmentItem;
 
-            if (appointmentItem.Location == "Jitsi Meet")
+            if (appointmentItem.Location == "AkgunMeet" || appointmentItem.Location == "Jitsi Meet")
             {
                 groupJitsiMeetControls.Visible = true;
                 groupNewMeeting.Visible = false;
@@ -269,7 +269,7 @@ namespace JitsiMeetOutlook
 
         private void addJitsiMeeting()
         {
-            appointmentItem.Location = "Jitsi Meet";
+            appointmentItem.Location = "AkgunMeet";
             initialise();
 
         }

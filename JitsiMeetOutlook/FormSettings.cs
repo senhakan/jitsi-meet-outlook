@@ -10,14 +10,14 @@ namespace JitsiMeetOutlook
     public partial class FormSettings : Form
     {
 
-        string defaultDomain;
+        private const string DefaultDomain = "meetj.akgun.com.tr";
 
         public FormSettings()
         {
             InitializeComponent();
 
             // Set default domain
-            defaultDomain = "meet.jit.si";
+            // Domain is locked to the organization server.
 
             // Set radio buttons
             loadDomainButtons();
@@ -26,8 +26,14 @@ namespace JitsiMeetOutlook
             loadStartWithVideoMutedButtons();
             loadRequireDisplayNameButtons();
 
-            // Load text field
-            textBoxDomain.Text = Properties.Settings.Default.Domain;
+            // Lock domain UI to default and keep settings consistent.
+            Properties.Settings.Default.Domain = DefaultDomain;
+            textBoxDomain.Text = DefaultDomain;
+            textBoxDomain.Enabled = false;
+            radioButtonDefaultDomain.Checked = true;
+            radioButtonDefaultDomain.Enabled = false;
+            radioButtonCustomDomain.Checked = false;
+            radioButtonCustomDomain.Enabled = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -61,7 +67,7 @@ namespace JitsiMeetOutlook
             if (radioButtonDefaultDomain.Checked)
             {
                 textBoxDomain.Enabled = false;
-                textBoxDomain.Text = defaultDomain;
+                textBoxDomain.Text = DefaultDomain;
             }
         }
 
@@ -95,7 +101,7 @@ namespace JitsiMeetOutlook
 
         private bool isDefaultDomain()
         {
-            if (Properties.Settings.Default.Domain == defaultDomain)
+            if (Properties.Settings.Default.Domain == DefaultDomain)
             {
                 return true;
             }
@@ -108,23 +114,7 @@ namespace JitsiMeetOutlook
         private void setSettings()
         {
             // Set domain
-            if (radioButtonDefaultDomain.Checked)
-            {
-                Properties.Settings.Default.Domain = defaultDomain;
-            }
-            else
-            {
-                string newDomain = cleanDomain(textBoxDomain.Text);
-
-                if (validDomain(newDomain))
-                {
-                    Properties.Settings.Default.Domain = newDomain;
-                }
-                else
-                {
-                    throw new InvalidOperationException("The domain entered is not valid.\n\nPlease specify a domain in the format 'your.domain.tld', 'yourdomain.tld' or similar.");
-                }
-            }
+            Properties.Settings.Default.Domain = DefaultDomain;
 
             // Set room ID
             if (radioButtonRandomRoomID.Checked)
@@ -201,16 +191,8 @@ namespace JitsiMeetOutlook
 
         private void loadDomainButtons()
         {
-            if (isDefaultDomain())
-            {
-                radioButtonDefaultDomain.Checked = true;
-                radioButtonCustomDomain.Checked = false;
-            }
-            else
-            {
-                radioButtonDefaultDomain.Checked = false;
-                radioButtonCustomDomain.Checked = true;
-            }
+            radioButtonDefaultDomain.Checked = true;
+            radioButtonCustomDomain.Checked = false;
         }
 
         private void loadRoomIDButtons()

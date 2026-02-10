@@ -37,10 +37,10 @@
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>days</UpdateIntervalUnits>
-    <ProductName>JitsiMeetOutlookAddIn</ProductName>
+    <ProductName>AkgunMeetOutlookAddIn</ProductName>
     <PublisherName />
     <SupportUrl />
-    <FriendlyName>Jitsi Meet Outlook Add-In</FriendlyName>
+    <FriendlyName>AkgunMeet Outlook Add-In</FriendlyName>
     <OfficeApplicationDescription />
     <LoadBehavior>3</LoadBehavior>
     <NuGetPackageImportStamp>

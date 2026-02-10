@@ -1,15 +1,13 @@
 {
   "calendarRibbonButton": {
-    "buttonNewJitsiMeeting": "New Jitsi Meeting"
+    "buttonNewJitsiMeeting": "New AkgunMeet Meeting"
   },
-
   "appointmentItem": {
-    "textBodyMessage": "\n\n\nJitsi-Meeting\n\nJoin the meeting: ",
+    "textBodyMessage": "\n\n\nAkgunMeet Meeting\n\nJoin the meeting: ",
     "textBodyMessagePhone": "Dial in numbers:\n",
     "textBodyPin": "\nConference number (PIN): ",
     "textBodyDisclaimer": "DISCLAIMER: Example\n\r"
   },
-
   "appointmentRibbonGroup": {
     "fieldRoomID": "ID:",
     "fieldRoomIDSuperTip": "Longer names are more secure.",
@@ -18,7 +16,6 @@
     "buttonStartWithAudioMuted": "Mute on Start",
     "buttonStartWithVideoMuted": "No Video on Start"
   },
-
   "settings": {
     "groupBoxDomain": "Domain",
     "radioButtonDefaultDomain": "Default",
@@ -29,13 +26,11 @@
     "groupBoxDefaultRoomID": "Default room ID",
     "radioButtonRandomRoomID": "Random",
     "radioButtonCustomRoomID": "Custom",
-
     "groupBoxRandomGeneratorMode": "Random generator mode",
     "comboBoxRandomGeneratorMode": {
       "phrase": "Phrase",
       "string": "String"
     },
-
     "groupBoxToggleDefaults": "Default meeting options",
     "labelToggled": "Toggled",
     "labelUntoggled": "Untoggled",
@@ -51,7 +46,6 @@
       "es": "Spanish",
       "cz": "Czech"
     },
-
     "tabControlSettings": {
       "tabPageDomain": "Domain",
       "tabPagePhone": "Phone",
@@ -60,7 +54,6 @@
       "tabPageLanguage": "Language"
     }
   },
-
   "roomNameGenerator": {
     "pluralNoun": [
       "Abilities",

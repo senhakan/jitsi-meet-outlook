@@ -1,13 +1,13 @@
-# Jitsi Meet Outlook Add-In
+# AkgunMeet Outlook Add-In
 
 ## Introduction
 
-This is a small plug-in that aims to integrate Jitsi Meet with Microsoft Outlook. Specifically, it adds two main features:
+This is a small plug-in that aims to integrate AkgunMeet with Microsoft Outlook. Specifically, it adds two main features:
 
-1. A button in the Outlook calendar tab that opens a new appointment and inserts a randomly generated Jitsi Meet URL.
+1. A button in the Outlook calendar tab that opens a new appointment and inserts a randomly generated AkgunMeet URL.
 2. A set of controls in the Outlook appointment window that, for example, allows for specification of a Room ID of choice and whether participants will be muted upon entry to the room.
 
-It was created to fulfil [this](https://community.jitsi.org/t/plug-ins-for-adding-jitsi-meet-links-to-appointment-requests-emails/21564) request, and more generally with a view to facilitate organisational use of Jitsi Meet. This project is not affiliated with that of Jitsi Meet nor its creators.
+It was created to fulfil [this](https://community.jitsi.org/t/plug-ins-for-adding-jitsi-meet-links-to-appointment-requests-emails/21564) request, and more generally with a view to facilitate organisational use of AkgunMeet. This project is not affiliated with that of Jitsi Meet nor its creators.
 
 The screenshots below display the features of implemented in this add-in.
 
@@ -35,7 +35,7 @@ The screenshots below display the features of implemented in this add-in.
 
 Go to the [releases](/../../releases) page and download the MSI installer for the latest version.
 
-For versions prior to 0.5.0: Make sure to download and run the JitsiMeetOutlook-v<version>-windows-<architecture>.msi file that matches the architecture of your installation of Microsoft Office. I.e. if Office was installed as 64-bit, then run JitsiMeetOutlook-v0.4.0-windows-x64.msi.
+For versions prior to 0.5.0: Make sure to download and run the AkgunMeetOutlook-v<version>-windows-<architecture>.msi file that matches the architecture of your installation of Microsoft Office. I.e. if Office was installed as 64-bit, then run AkgunMeetOutlook-v0.4.0-windows-x64.msi.
 
 ### Upgrade
 
@@ -47,22 +47,22 @@ The add-in can be uninstalled via the "Add or remove programs" pane in Windows, 
 
 ### Command Line
 
-As of v0.4.0, the add-in can be installed via command line with custom setting passed as parameters. This works by calling `msiexec` on the .msi installer file. The following parameters can be passed to the installer to preconfigure the Jitsi Meet Outlook add-in settings (all are optional):
+As of v0.4.0, the add-in can be installed via command line with custom setting passed as parameters. This works by calling `msiexec` on the .msi installer file. The following parameters can be passed to the installer to preconfigure the AkgunMeet Outlook add-in settings (all are optional):
 
 - `TARGETDIR`: Path to the install directory.
 - `DOMAIN`: Custom domain.
-- `ROOMID`: A default room ID new Jitsi Meet appointments get assigned.
+- `ROOMID`: A default room ID new AkgunMeet appointments get assigned.
 - `MODE`: The mode of the random room ID generator, e.g. phrases or strings. (phrase/string)
-- `REQNAME`: Require name by default in new Jitsi Meet appointments. (True/False)
-- `NOAUDIO`: Mute audio by default in new Jitsi Meet appointments. (True/False)
-- `NOVIDEO`: Disable video by default in new Jitsi Meet appointments. (True/False)
+- `REQNAME`: Require name by default in new AkgunMeet appointments. (True/False)
+- `NOAUDIO`: Mute audio by default in new AkgunMeet appointments. (True/False)
+- `NOVIDEO`: Disable video by default in new AkgunMeet appointments. (True/False)
 - `LANG`: Specify the display language. Currently, English, French, German, and Russian are available. (en/fr/de/ru)
 - `CONFERENCEMAPPER_ENDPOINT`: Endpoint to get the Conference PIN from
 - `PHONENUMBERLIST_ENDPOINT`: Endpoint to get the Phone Number from to call in
 - `CONFERENCESCHEDULER_ENDPOINT`: Endpoint to send the conference information to in advance, in order to make the call available for call in before the first person joins
 - `CONFERENCESCHEDULER_ENDPOINT_SECRET`: Secret for the `CONFERENCESCHEDULER_ENDPOINT`, used for JWT generation.
 
-Example install command: `msiexec /i "C:\Downloads\JitsiMeetOutlook-v0.6.0-windows-anycpu.msi" TARGETDIR="C:\Program Files (x86)\Jitsi Meet Outlook" DOMAIN="my.domain.com" ROOMID="PermanentRoomName" MODE="string" REQNAME="True" NOAUDIO="True" NOVIDEO="True" LANG="en" CONFERENCEMAPPER_ENDPOINT="https://my.domain.com/conferenceMapper" PHONENUMBERLIST_ENDPOINT="https://my.domain.com/phoneNumberList" /passive`
+Example install command: `msiexec /i "C:\Downloads\AkgunMeetOutlook-v0.6.0-windows-anycpu.msi" TARGETDIR="C:\Program Files (x86)\AkgunMeet Outlook" DOMAIN="my.domain.com" ROOMID="PermanentRoomName" MODE="string" REQNAME="True" NOAUDIO="True" NOVIDEO="True" LANG="en" CONFERENCEMAPPER_ENDPOINT="https://my.domain.com/conferenceMapper" PHONENUMBERLIST_ENDPOINT="https://my.domain.com/phoneNumberList" /passive`
 
 All settings can be changed from the settings menu after installation.
 
@@ -97,8 +97,8 @@ The published code and installer is still at an early stage. Preliminarily, the 
 - [x] Make the installation procedure less painful (v0.2.0)
 - [x] Add small icons to the buttons in the appointment ribbon (v0.2.0)
 - [x] Add a button for starting a conference with video muted to appointment tab (v0.2.0)
-- [x] Only show Jitsi buttons if appointment was created through "New Jitsi Meeting" (v0.2.0)
-- [x] Add persistent setting: change Jitsi domain (v0.2.0)
+- [x] Only show AkgunMeet buttons if appointment was created through "New AkgunMeet Meeting" (v0.2.0)
+- [x] Add persistent setting: change AkgunMeet domain (v0.2.0)
 - [x] Add persistent setting: preference for whether to start a call with muted mic or video (v0.3.0)
 - [x] Add persistent setting: assign a default or random room ID on creation of new appointment (v0.3.0)
 - [x] Add checks on the validity of the custom domain value provided (v0.2.1)
@@ -112,14 +112,14 @@ Since this plug-in is brand new, any feedback would be most appreciated!
 
 Breaking:
 
-Changed the .dll and Registry Entries to not contain spaces anymore. ("Jitsi Meet Outlook Add-In" => "JitsiMeetOutlookAddIn")
+Changed the .dll and Registry Entries to not contain spaces anymore. ("AkgunMeet Outlook Add-In" => "AkgunMeetOutlookAddIn")
 
 Enhancements:
 
-- Add Phone Numbers (from the Jitsi Installation pointed to)
-- Use Conference PIN (from the Jitsi Installation pointed to, instead of manually generated)
+- Add Phone Numbers (from the AkgunMeet installation pointed to)
+- Use Conference PIN (from the AkgunMeet installation pointed to, instead of manually generated)
 - Add Conference Scheduler to plan meetings ahead of time on the jitsi server side
-- Add Button to add Jitsi Conference in normal meetings
+- Add Button to add AkgunMeet Conference in normal meetings
 - Refactoring to enable modification of already saved/closed meetings
 
 ### v0.6.6
@@ -218,7 +218,7 @@ Enhancements:
 - The installer no longer prompts trust certificate issues and delegates trust decision to user
 - Small icons have been added to the buttons in the appointment ribbon
 - A button for starting with the video turned off has been added to the appointment ribbon
-- The appointment ribbon buttons are only displayed for appointments created via the "New Jitsi Meeting" button in the calendar tab
+- The appointment ribbon buttons are only displayed for appointments created via the "New AkgunMeet Meeting" button in the calendar tab
 - Persistent settings have been enabled
 - It is now possible to specify a custom domain in the settings dialogue
 - Various small bugs have been fixed to improve reliability

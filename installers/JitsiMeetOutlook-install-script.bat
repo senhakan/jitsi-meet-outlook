@@ -2,7 +2,7 @@
 ::=======================
 :: SETUP
 ::=======================
-::Jitsi access
+::AkgunMeet access
 set ROOMID=default_room
 set DOMAIN=domain:port
 ::next variables, either True or False
@@ -15,9 +15,9 @@ set LANG=en
 :: Plugin URL and paths
 ::======================
 set origin=https://github.com/timetheoretical/jitsi-meet-outlook/releases/download/v0.6.0/JitsiMeetOutlook-v0.6.0-windows-anycpu.msi
-set target=%ProgramFiles%\Jitsi Meet Outlook
-:: if x86 version, use target=%ProgramFiles(x86)%\Jitsi Meet Outlook
-:: if x64 version, use target=%ProgramFiles%\Jitsi Meet Outlook
+set target=%ProgramFiles%\AkgunMeet Outlook
+:: if x86 version, use target=%ProgramFiles(x86)%\AkgunMeet Outlook
+:: if x64 version, use target=%ProgramFiles%\AkgunMeet Outlook
 
 
 ::===============
@@ -29,7 +29,7 @@ IF EXIST %target% (
 ) ELSE ( 
     ECHO No previous installation found.
 )
-ECHO Downloading plugin Jitsi-Meet-Outlook...
+ECHO Downloading plugin AkgunMeet-Outlook...
 :PowerShell
 SET PSScript=%TEMP%\~tmpDlFile.ps1
 IF EXIST "%PSScript%" DEL /Q /F "%PSScript%"

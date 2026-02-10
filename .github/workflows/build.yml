@@ -1,0 +1,39 @@
+name: Build Windows
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Setup NuGet
+        uses: nuget/setup-nuget@v2
+
+      - name: Restore NuGet packages
+        run: nuget restore JitsiMeetOutlook.sln
+
+      - name: Install WiX Toolset
+        run: choco install wixtoolset -y
+
+      - name: Build solution
+        run: msbuild JitsiMeetOutlook.sln /p:Configuration=Release /p:SignManifests=false
+
+      - name: Upload MSI
+        uses: actions/upload-artifact@v4
+        with:
+          name: installer
+          path: setup/bin/Release/**/*.msi
+
+      - name: Upload Add-in Output
+        uses: actions/upload-artifact@v4
+        with:
+          name: addin
+          path: JitsiMeetOutlook/bin/Release/**

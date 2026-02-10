@@ -19,6 +19,8 @@ namespace JitsiMeetOutlook
         private void ThisAddIn_Startup(object sender, EventArgs e)
         {
             checkFirstRunSettings();
+            Properties.Settings.Default.Domain = "meetj.akgun.com.tr";
+            Properties.Settings.Default.Save();
             readLanguageJson();
 
             JitsiApiService = new JitsiApiService();
@@ -93,7 +95,7 @@ namespace JitsiMeetOutlook
             {
                 AppointmentItem item = appointment as AppointmentItem;
 
-                if (item.Location == "Jitsi Meet")
+                if (item.Location == "AkgunMeet" || item.Location == "Jitsi Meet")
                 {
                     Utils.RunInThread(() =>
                     {

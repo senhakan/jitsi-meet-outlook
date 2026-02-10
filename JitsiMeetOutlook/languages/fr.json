@@ -1,15 +1,13 @@
 {
   "calendarRibbonButton": {
-    "buttonNewJitsiMeeting": "Nouvelle conférence Jitsi"
+    "buttonNewJitsiMeeting": "Nouvelle conférence AkgunMeet"
   },
-
   "appointmentItem": {
-    "textBodyMessage": "\r\nJitsi-Meeting \r\n\nRejoignez la conférence : ",
+    "textBodyMessage": "\r\nAkgunMeet Meeting \r\n\nRejoignez la conférence : ",
     "textBodyMessagePhone": "\n\rNuméro de téléphone : ",
     "textBodyPin": "\r\nNuméro de conférence: ",
     "textBodyDisclaimer": "\n\r"
   },
-
   "appointmentRibbonGroup": {
     "fieldRoomID": "ID:",
     "fieldRoomIDSuperTip": "Plus le nom est long, plus la conférence est sécurisée.",
@@ -18,7 +16,6 @@
     "buttonStartWithAudioMuted": "Audio désactivé par défaut",
     "buttonStartWithVideoMuted": "Vidéo désactivée par défaut"
   },
-
   "settings": {
     "groupBoxDomain": "Domaine",
     "radioButtonDefaultDomain": "Défaut",
@@ -29,13 +26,11 @@
     "groupBoxDefaultRoomID": "ID par défaut",
     "radioButtonRandomRoomID": "Aléatoire",
     "radioButtonCustomRoomID": "Personnalisé",
-
     "groupBoxRandomGeneratorMode": "Générateur de nom automatique",
     "comboBoxRandomGeneratorMode": {
       "phrase": "Phrase",
       "string": "Lien aléatoire"
     },
-
     "groupBoxToggleDefaults": "Options par défaut de la conférence",
     "labelToggled": "Basculer",
     "labelUntoggled": "Débloquer",
@@ -50,7 +45,6 @@
       "de": "Allemand",
       "es": "Espagnol"
     },
-
     "tabControlSettings": {
       "tabPageDomain": "Domaine",
       "tabPagePhone": "Phone",
@@ -59,7 +53,6 @@
       "tabPageLanguage": "Langues"
     }
   },
-
   "roomNameGenerator": {
     "pluralNoun": [
       "Angle",

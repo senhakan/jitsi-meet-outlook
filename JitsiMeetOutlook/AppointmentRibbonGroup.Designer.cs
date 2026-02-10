@@ -71,7 +71,7 @@
             this.groupJitsiMeetControls.Items.Add(this.box1);
             this.groupJitsiMeetControls.Items.Add(this.box2);
             this.groupJitsiMeetControls.Items.Add(this.box3);
-            this.groupJitsiMeetControls.Label = "Jitsi Meet";
+            this.groupJitsiMeetControls.Label = "AkgunMeet";
             this.groupJitsiMeetControls.Name = "groupJitsiMeetControls";
             this.groupJitsiMeetControls.Position = this.Factory.RibbonPosition.BeforeOfficeId("GroupAttendees");
             this.groupJitsiMeetControls.Visible = false;
@@ -140,7 +140,7 @@
             // groupNewMeeting
             // 
             this.groupNewMeeting.Items.Add(this.buttonNewJitsiMeeting);
-            this.groupNewMeeting.Label = "Jitsi Meet";
+            this.groupNewMeeting.Label = "AkgunMeet";
             this.groupNewMeeting.Name = "groupNewMeeting";
             this.groupNewMeeting.Position = this.Factory.RibbonPosition.BeforeOfficeId("GroupAttendees");
             this.groupNewMeeting.Visible = false;
@@ -149,7 +149,7 @@
             // 
             this.buttonNewJitsiMeeting.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
             this.buttonNewJitsiMeeting.Image = global::JitsiMeetOutlook.Properties.Resources.jitsiLogo_square;
-            this.buttonNewJitsiMeeting.Label = "New Jitsi Meeting";
+            this.buttonNewJitsiMeeting.Label = "New AkgunMeet Meeting";
             this.buttonNewJitsiMeeting.Name = "buttonNewJitsiMeeting";
             this.buttonNewJitsiMeeting.ShowImage = true;
             this.buttonNewJitsiMeeting.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonNewJitsiMeeting_Click);

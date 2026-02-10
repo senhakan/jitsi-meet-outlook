@@ -25,7 +25,7 @@ namespace JitsiMeetOutlook.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("meet.jit.si")]
+        [global::System.Configuration.DefaultSettingValueAttribute("meetj.akgun.com.tr")]
         public string Domain {
             get {
                 return ((string)(this["Domain"]));
