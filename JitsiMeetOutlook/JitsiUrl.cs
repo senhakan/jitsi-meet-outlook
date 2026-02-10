@@ -17,14 +17,7 @@ namespace JitsiMeetOutlook
     {
         public static string generateRandomId()
         {
-            if (Properties.Settings.Default.randomRoomIdGeneratorMode == "phrase")
-            {
-                return generateRandomPhrase();
-            }
-            else
-            {
-                return generateRandomString(16);
-            }
+            return "AKG" + generateRandomDigits(6);
         }
         public static string generateRandomPhrase()
         {
@@ -112,6 +105,22 @@ namespace JitsiMeetOutlook
             }
 
             return result.ToString();
+        }
+
+        private static string generateRandomDigits(int size)
+        {
+            const string digits = "0123456789";
+            char[] result = new char[size];
+            byte[] data = new byte[size];
+            using (var rng = new RNGCryptoServiceProvider())
+            {
+                rng.GetBytes(data);
+            }
+            for (int i = 0; i < size; i++)
+            {
+                result[i] = digits[data[i] % digits.Length];
+            }
+            return new string(result);
         }
     }
 }

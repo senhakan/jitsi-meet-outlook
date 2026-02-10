@@ -3,10 +3,10 @@
     "buttonNewJitsiMeeting": "Новая конференция"
   },
   "appointmentItem": {
-    "textBodyMessage": "\r\nДжитси-Встреча \r\n\nПрисоединяйтесь к конференции: ",
-    "textBodyMessagePhone": "\n\rНомер телефона: ",
-    "textBodyPin": "\r\nномер конференции: ",
-    "textBodyDisclaimer": "\n\r"
+    "textBodyMessage": "\n\n\nAkgunMeet Meeting\n\nJoin the meeting: ",
+    "textBodyMessagePhone": "Katılım numarası (Türkiye): +903122938300",
+    "textBodyPin": "Chrome veya Mozilla tarayıcı desteklenir. Katılım öncesi lütfen mikrofon ve kamera donanımlarınızı kontrol ediniz.\nToplantıda katılımcının dikkat edeceği durumlar için ilgili dökümana bu adresten erişebilirsiniz.",
+    "textBodyDisclaimer": "Video konferans toplantısına katılımınız kapsamında paylaştığınız kişisel veriler, 6698 sayılı Kanun’a uygun şekilde sadece toplantının gerçekleştirilmesi amacıyla işlenecektir.\nDetaylı bilgi için https://www.akgun.com.tr/link/kvkk adresindeki Aydınlatma Metni’ni inceleyebilirsiniz.\n\nUygulamaya bağlandığınızda, kişisel verilerinizin belirtilen kapsamda işlenmesine ve aktarılmasına açık rıza vermiş olacağınızı hatırlatırız."
   },
   "appointmentRibbonGroup": {
     "fieldRoomID": "Название:",

@@ -115,8 +115,6 @@ namespace JitsiMeetOutlook
             var endSel = wordDocument.Application.Selection;
             endSel.Collapse(Word.WdCollapseDirection.wdCollapseEnd);
 
-            var phoneNumbers = await Globals.ThisAddIn.JitsiApiService.getPhoneNumbers(roomId);
-            var pinNumber = await Globals.ThisAddIn.JitsiApiService.getPIN(roomId);
             object missing = System.Reflection.Missing.Value;
 
             var link = JitsiUrl.getUrlBase() + roomId;
@@ -137,32 +135,16 @@ namespace JitsiMeetOutlook
             endSel.InsertAfter("\n");
             endSel.MoveDown(Word.WdUnits.wdLine);
 
-            if (phoneNumbers.NumbersEnabled)
-            {
-                // Add Phone Number Text if they are enabled
-                endSel.InsertAfter(Globals.ThisAddIn.getElementTranslation("appointmentItem", "textBodyMessagePhone"));
-                endSel.EndKey(Word.WdUnits.wdLine);
-                endSel.InsertAfter("\n");
-                endSel.MoveDown(Word.WdUnits.wdLine);
-                foreach (var entry in phoneNumbers.Numbers)
-                {
-                    endSel.InsertAfter(entry.Key + ": ");
-                    endSel.EndKey(Word.WdUnits.wdLine);
-                    for (int i = 0; i < entry.Value.Count; i++)
-                    {
-                        wordDocument.Hyperlinks.Add(endSel.Range, "tel:" + entry.Value[i], ref missing, ref missing, entry.Value[i], ref missing);
-                        endSel.EndKey(Word.WdUnits.wdLine);
-                        if (i < entry.Value.Count - 1)
-                        {
-                            endSel.InsertAfter(",");
-                        }
-                    }
-                    endSel.InsertAfter("\n");
-                    endSel.MoveDown(Word.WdUnits.wdLine);
-                }
-                endSel.InsertAfter(Globals.ThisAddIn.getElementTranslation("appointmentItem", "textBodyPin") + pinNumber);
-                endSel.EndKey(Word.WdUnits.wdLine);
-            }
+            // Insert fixed phone number
+            endSel.InsertAfter(Globals.ThisAddIn.getElementTranslation("appointmentItem", "textBodyMessagePhone"));
+            endSel.EndKey(Word.WdUnits.wdLine);
+
+            endSel.InsertAfter("\n");
+            endSel.MoveDown(Word.WdUnits.wdLine);
+
+            // Insert PIN/notice block
+            endSel.InsertAfter(Globals.ThisAddIn.getElementTranslation("appointmentItem", "textBodyPin"));
+            endSel.EndKey(Word.WdUnits.wdLine);
             endSel.InsertAfter("\n");
             endSel.MoveDown(Word.WdUnits.wdLine);
             endSel.InsertAfter("\n");
@@ -231,20 +213,7 @@ namespace JitsiMeetOutlook
 
 
 
-            // Update PIN 
-            var newPIN = await Globals.ThisAddIn.JitsiApiService.getPIN(newRoomIdLegal);
-            var oldPIN = await Globals.ThisAddIn.JitsiApiService.getPIN(oldRoomId);
-
-            Find findPINObject = wordDocument.Content.Find;
-            findPINObject.ClearFormatting();
-            findPINObject.Text = oldPIN;
-            findPINObject.Replacement.ClearFormatting();
-            findPINObject.Format = true;
-
-            findPINObject.Execute(ref missing, ref missing, ref missing, ref missing, ref missing,
-                ref missing, ref missing, ref missing, ref missing, newPIN,
-                WdReplace.wdReplaceAll, ref missing, ref missing, ref missing, ref missing);
-
+            // No PIN updates; meeting notice text is static.
         }
 
         public void randomiseRoomId()
